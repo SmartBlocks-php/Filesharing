@@ -1,0 +1,30 @@
+{
+    "name": "Filesharing",
+    "token": "file_sharing",
+    "description": "This block contains organization apps.",
+    "color": "#1c7783",
+    "types": [
+        {
+            "model_name": "File",
+            "collection_name": "Files",
+            "plural": "files",
+            "ws_origin": "/Filesharing/Files",
+            "model_location": "Filesharing/Models/File",
+            "collection_location": "Filesharing/Collections/Files"
+        }
+    ],
+    "apps": [
+        {
+            "name": "Filesharing",
+            "token": "Filesharing",
+            "description": "File sharing app",
+            "link": "#Filesharing",
+            "logo_url": "/images/icons/user.png",
+            "block_token": "file_sharing",
+            "entry_point": "Filesharing/Apps/Main/Views/MainView",
+            "routing": {
+
+            }
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-FileSharing
+Filesharing
 ===========
 
-FileSharing block for SmartBlocks
+Filesharing block for SmartBlocks
