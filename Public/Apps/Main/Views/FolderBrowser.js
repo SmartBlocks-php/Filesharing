@@ -146,7 +146,7 @@ define([
                 $(".k_fs_current_address").html(base.folder.get("address") !== undefined ? base.folder.get("address") : "/");
             else
                 $(".k_fs_current_address").html("/");
-
+            base.fetchFiles(null);
         },
         reload: function () {
             var base = this;
@@ -170,15 +170,11 @@ define([
         },
         fetchFiles: function (folder_id, callback) {
             var base = this;
-
-            base.files_list = new SmartBlocks.Blocks.Filesharing.Collections.Files(SmartBlocks.Blocks.Filesharing.Data.files.filter(function (file) {
-                return file.get("parent_folder").get("id") == folder_id;
-            }));
-            base.files_list.fetch({
-                data: {
-                    "folder_id": folder_id + ""
-                },
+            SmartBlocks.Blocks.Filesharing.Data.files.fetch({
                 success: function () {
+                    base.files_list = new SmartBlocks.Blocks.Filesharing.Collections.Files(SmartBlocks.Blocks.Filesharing.Data.files.filter(function (file) {
+                        return file.get("parent_folder").get("id") == folder_id;
+                    }));
                     console.log(folder_id);
                     if (callback) {
                         callback();
