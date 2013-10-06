@@ -3,6 +3,7 @@
     "token": "file_sharing",
     "description": "This block contains organization apps.",
     "color": "#1c7783",
+    "restricted_to":"user",
     "types": [
         {
             "model_name": "File",
